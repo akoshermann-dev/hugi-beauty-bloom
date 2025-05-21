@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Scissors, Brush, Comb } from 'lucide-react';
+import { Scissors, Brush, ArrowRight } from 'lucide-react';
 
 const services = {
   haircuts: [
@@ -31,7 +31,7 @@ const ServicesSection = () => {
   const icons = {
     haircuts: <Scissors className="w-5 h-5" />,
     coloring: <Brush className="w-5 h-5" />,
-    styling: <Comb className="w-5 h-5" />
+    styling: <ArrowRight className="w-5 h-5" />
   };
 
   return (
