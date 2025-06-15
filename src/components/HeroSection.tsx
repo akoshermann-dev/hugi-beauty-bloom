@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 
@@ -15,12 +16,8 @@ const HeroSection = () => {
               Effortless style. <br />
               Warm{' '}
               <span
-                className="relative z-10 px-3 py-1 rounded-lg"
                 style={{
-                  color: '#e275ad',                     // Deeper, punchier pink
-                  textShadow: '0 2px 6px rgba(190,0,60,0.24)', // Soft shadow for pop
-                  background: 'rgba(246,214,225,0.7)',  // Faint background for separation
-                  boxShadow: '0 0 0 4px rgba(246,214,225, 0.24)'
+                  color: '#e275ad',
                 }}
               >
                 welcome.
@@ -55,3 +52,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
