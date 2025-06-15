@@ -23,12 +23,11 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <NumbersSection bookingsCount={bookingsCount} />
         <AboutSection />
         <ServicesSection />
         <GallerySection />
         <TestimonialsSection />
-        {/* BookingSection gets the increment callback */}
+        <NumbersSection bookingsCount={bookingsCount} />
         <BookingSection onBooking={handleNewBooking} />
         <ContactSection />
       </main>
