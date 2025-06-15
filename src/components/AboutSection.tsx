@@ -1,54 +1,49 @@
 
 import React from 'react';
-import { Star, Heart, CircleCheck } from "lucide-react";
-
-const features = [
-  {
-    icon: <Star className="w-6 h-6 text-salon-powderPink" />,
-    title: "Passionate Stylists",
-    description: "Talented, caring professionals focused on your best style and comfort.",
-  },
-  {
-    icon: <Heart className="w-6 h-6 text-salon-powderGrey" />,
-    title: "Warm Atmosphere",
-    description: "Soothing colors, gentle lights – a true urban retreat.",
-  },
-  {
-    icon: <CircleCheck className="w-6 h-6 text-salon-blush" />,
-    title: "Top Quality",
-    description: "We use premium, nourishing products for healthy, beautiful hair.",
-  },
-];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-salon-rose">
+    <section
+      id="about"
+      className="py-24"
+      style={{
+        background: 'linear-gradient(120deg, #e7dfda 60%, #f6f2ef 100%)',
+      }}
+    >
       <div className="container mx-auto px-4">
-        <div className="bg-white/90 rounded-2xl shadow-xl p-8 md:p-14 flex flex-col md:flex-row gap-10 items-center">
+        <div className="bg-white/95 rounded-2xl shadow-2xl p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center md:items-start">
           <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
-            <div className="bg-salon-powderPink/40 border-2 border-salon-powderGrey rounded-2xl p-2 shadow aspect-video w-96 max-w-full">
+            <div className="rounded-xl overflow-hidden max-w-xs w-full aspect-[6/7] shadow bg-[#ebdfd4] border border-[#e6e1da]">
               <img
                 src="/placeholder.svg"
                 alt="Salon interior"
-                className="rounded-xl object-cover w-full h-full"
+                className="object-cover w-full h-full"
+                style={{ minHeight: 320 }}
               />
             </div>
           </div>
           <div className="md:w-1/2">
-            <h3 className="text-3xl font-playfair font-bold text-salon-dark mb-4">About Us</h3>
-            <p className="mb-6 text-salon-brown font-medium text-lg">
-              Since 2010, our mission is to make every guest feel like family. Bespoke hair, modern comfort, and genuine kindness await you.
+            <h3 className="text-4xl md:text-5xl font-playfair font-bold text-[#5d564d] tracking-wide uppercase mb-4">
+              About Us
+            </h3>
+            <div className="w-20 h-1 bg-[#ccb598] rounded mb-5"></div>
+            <p className="mb-7 text-[#8c8276] font-medium text-lg leading-relaxed" style={{maxWidth: 520}}>
+              Our professional team brings out the best in you,<br className="hidden sm:inline" /> with personalized styles and a warm, welcoming atmosphere. Experience modern hair artistry where classic elegance meets the latest trends.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4">
-              {features.map((feature, idx) => (
-                <div key={idx} className="flex flex-col items-center p-4 bg-salon-powderGrey/20 rounded-lg shadow hover:shadow-md transition animate-pop-in"
-                  style={{ animationDelay: `${0.2 + idx * 0.1}s`, animationFillMode: 'backwards' }}>
-                  <div className="mb-2">{feature.icon}</div>
-                  <h4 className="font-semibold text-md text-salon-dark mb-1">{feature.title}</h4>
-                  <p className="text-salon-brown text-center text-sm">{feature.description}</p>
-                </div>
-              ))}
-            </div>
+            <ul className="space-y-3 text-[#5d564d] text-base">
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#ccb598]" />
+                Passionate, highly-trained stylists for every guest
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#ccb598]" />
+                Inviting decor &amp; relaxing atmosphere
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#ccb598]" />
+                Only quality, gentle, nourishing products
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -57,3 +52,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+

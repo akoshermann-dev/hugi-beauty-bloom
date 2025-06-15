@@ -12,14 +12,17 @@ import Footer from '@/components/Footer';
 import NumbersSection from '@/components/NumbersSection';
 
 const Index = () => {
-  // Start with a reasonable number of bookings (demo: 197)
   const [bookingsCount, setBookingsCount] = useState(197);
 
-  // Handler to increment bookings count
   const handleNewBooking = () => setBookingsCount((prev) => prev + 1);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div
+      className="flex flex-col min-h-screen"
+      style={{
+        background: 'linear-gradient(120deg, #ece4dd 0%, #f8f6f4 100%)',
+      }}
+    >
       <Header />
       <main className="flex-grow">
         <HeroSection />
