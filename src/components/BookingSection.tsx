@@ -64,15 +64,15 @@ const BookingSection = () => {
   };
 
   return (
-    <section id="booking" className="py-20 bg-white">
+    <section id="booking" className="py-20 bg-salon-peach/70">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-salon-dark">Book an Appointment</h2>
-          <div className="w-20 h-1 bg-salon-purple mx-auto mb-6"></div>
-          <p className="text-salon-gray max-w-xl mx-auto">Schedule your next appointment with one of our talented stylists.</p>
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Book an Appointment</h2>
+          <div className="w-20 h-1 bg-salon-orange mx-auto mb-6 rounded-lg"></div>
+          <p className="text-salon-brown max-w-xl mx-auto font-medium">We look forward to pampering you in our warm, welcoming space!</p>
         </div>
         
-        <Card className="max-w-2xl mx-auto bg-white shadow-lg p-6">
+        <Card className="max-w-2xl mx-auto bg-salon-light/90 shadow-2xl p-8 border-2 border-salon-peach rounded-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -82,6 +82,7 @@ const BookingSection = () => {
                   value={name} 
                   onChange={(e) => setName(e.target.value)} 
                   placeholder="Your name"
+                  className="bg-salon-peach/30 focus:bg-salon-peach/60"
                 />
               </div>
               
@@ -93,6 +94,7 @@ const BookingSection = () => {
                   value={email} 
                   onChange={(e) => setEmail(e.target.value)} 
                   placeholder="Your email"
+                  className="bg-salon-peach/30 focus:bg-salon-peach/60"
                 />
               </div>
               
@@ -104,16 +106,17 @@ const BookingSection = () => {
                   value={phone} 
                   onChange={(e) => setPhone(e.target.value)} 
                   placeholder="Your phone number"
+                  className="bg-salon-peach/30 focus:bg-salon-peach/60"
                 />
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="service">Service</Label>
                 <Select onValueChange={setService} value={service}>
-                  <SelectTrigger id="service">
+                  <SelectTrigger id="service" className="bg-salon-peach/30 focus:bg-salon-peach/60">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-salon-peach/90">
                     {services.map((item) => (
                       <SelectItem key={item} value={item}>
                         {item}
@@ -129,13 +132,13 @@ const BookingSection = () => {
                   <PopoverTrigger asChild>
                     <Button
                       variant="outline"
-                      className="w-full justify-start text-left font-normal"
+                      className="w-full justify-start text-left font-normal bg-salon-peach/30 hover:bg-salon-peach/60"
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4" />
+                      <CalendarIcon className="mr-2 h-4 w-4 text-salon-orange" />
                       {date ? format(date, "PPP") : "Select a date"}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0">
+                  <PopoverContent className="w-auto p-0 bg-salon-peach/90">
                     <Calendar
                       mode="single"
                       selected={date}
@@ -150,15 +153,15 @@ const BookingSection = () => {
               <div className="space-y-2">
                 <Label>Time</Label>
                 <Select onValueChange={setTime} value={time}>
-                  <SelectTrigger>
+                  <SelectTrigger className="bg-salon-peach/30 focus:bg-salon-peach/60">
                     <SelectValue placeholder="Select a time">
                       <div className="flex items-center">
-                        <Clock className="mr-2 h-4 w-4" />
+                        <Clock className="mr-2 h-4 w-4 text-salon-orange" />
                         {time || "Select a time"}
                       </div>
                     </SelectValue>
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-salon-peach/90">
                     {timeSlots.map((slot) => (
                       <SelectItem key={slot} value={slot}>
                         {slot}
@@ -171,12 +174,12 @@ const BookingSection = () => {
             
             <Button 
               type="submit" 
-              className="w-full bg-salon-purple hover:bg-purple-400 text-white"
+              className="w-full bg-salon-orange hover:bg-salon-gold text-white font-bold px-6 py-3 rounded-full shadow-lg"
             >
               Request Appointment
             </Button>
             
-            <p className="text-xs text-salon-gray text-center mt-4">
+            <p className="text-xs text-salon-brown text-center mt-4 font-medium">
               By booking an appointment, you agree to our cancellation policy.
             </p>
           </form>

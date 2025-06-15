@@ -36,30 +36,30 @@ const galleryImages = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-20 bg-white">
+    <section id="gallery" className="py-20 bg-gradient-to-br from-salon-peach/50 via-salon-light to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-salon-dark">Our Gallery</h2>
-          <div className="w-20 h-1 bg-salon-purple mx-auto mb-6"></div>
-          <p className="text-salon-gray max-w-xl mx-auto">See examples of our beautiful work and get inspired for your next visit.</p>
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Our Gallery</h2>
+          <div className="w-20 h-1 bg-salon-orange mx-auto mb-6 rounded-lg"></div>
+          <p className="text-salon-brown max-w-xl mx-auto font-medium">See the beautiful results of our artistry and hospitality!</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div 
               key={index} 
-              className="group relative rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="group relative rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-salon-peach"
             >
-              <div className="aspect-square bg-gray-200">
+              <div className="aspect-square bg-salon-light">
                 <img 
                   src={image.url} 
                   alt={image.alt} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-salon-brown/80 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-end">
                 <div className="p-4 w-full">
-                  <h3 className="text-white text-xl font-semibold">{image.caption}</h3>
+                  <h3 className="text-white text-xl font-bold font-playfair">{image.caption}</h3>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ const GallerySection = () => {
         <div className="text-center mt-10">
           <a 
             href="#" 
-            className="inline-flex items-center text-salon-purple hover:text-purple-600 font-semibold transition-colors"
+            className="inline-flex items-center text-salon-orange hover:text-salon-gold font-semibold transition-colors"
           >
             View More on Instagram
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">

@@ -7,19 +7,19 @@ const testimonials = [
   {
     name: "Anna Kovács",
     position: "Regular Client",
-    quote: "The team at Hugi szépségfarm always knows exactly what I need. I've never left disappointed!",
+    quote: "The team at Hugi szépségfarm always welcomes me with warmth and care. Every visit feels like coming home!",
     rating: 5
   },
   {
     name: "Péter Nagy",
     position: "First-time Client",
-    quote: "Exceptional service from start to finish. The stylist took time to understand what I wanted and delivered perfectly.",
+    quote: "A genuinely inviting atmosphere, amazing staff, and beautiful results. Highly recommend this cozy salon.",
     rating: 5
   },
   {
     name: "Viktória Szabó",
     position: "Monthly Client",
-    quote: "I've been coming here for over a year now and wouldn't trust anyone else with my hair. Highly recommended!",
+    quote: "There’s always a smile and good vibes here. The warm colors and friendly team make every appointment a joy.",
     rating: 5
   }
 ];
@@ -29,32 +29,32 @@ const TestimonialsSection = () => {
     return Array(5).fill(0).map((_, i) => (
       <Star 
         key={i} 
-        className={`h-4 w-4 ${i < rating ? 'text-salon-gold fill-salon-gold' : 'text-gray-300'}`} 
+        className={`h-4 w-4 ${i < rating ? 'text-salon-gold fill-salon-gold' : 'text-salon-peach'}`} 
       />
     ));
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-salon-light">
+    <section id="testimonials" className="py-20 bg-salon-peach/40">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-salon-dark">Client Testimonials</h2>
-          <div className="w-20 h-1 bg-salon-gold mx-auto mb-6"></div>
-          <p className="text-salon-gray max-w-xl mx-auto">Hear what our clients have to say about their experiences at Hugi szépségfarm.</p>
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Client Testimonials</h2>
+          <div className="w-20 h-1 bg-salon-orange mx-auto mb-6 rounded-lg"></div>
+          <p className="text-salon-brown max-w-xl mx-auto font-medium">Hear how our warmth and joy shines through for our clients.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-white border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card key={index} className="bg-salon-light/70 border-none shadow-xl hover:shadow-2xl transition-shadow rounded-xl">
               <CardContent className="p-6">
                 <div className="flex mb-4">
                   {renderStars(testimonial.rating)}
                 </div>
                 <blockquote className="mb-4">
-                  <p className="text-salon-gray italic">"{testimonial.quote}"</p>
+                  <p className="text-salon-brown italic font-medium">"{testimonial.quote}"</p>
                 </blockquote>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-salon-gold/30 flex items-center justify-center text-salon-gold font-bold">
+                  <div className="w-12 h-12 rounded-full bg-salon-orange/20 flex items-center justify-center text-salon-orange font-bold font-playfair">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div className="ml-4">
@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <a 
             href="#" 
-            className="inline-flex items-center text-salon-gold hover:text-yellow-600 font-semibold transition-colors"
+            className="inline-flex items-center text-salon-orange hover:text-salon-gold font-semibold transition-colors"
           >
             Read More Reviews
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">

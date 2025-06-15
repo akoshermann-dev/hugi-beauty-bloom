@@ -64,12 +64,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				salon: {
-					light: '#C0C0C0', // updated from #F1F0FB (purple) to silver
-					purple: '#E8C966', // !! replaced light-purple with light-gold !!
-					gold: '#E8C966', // added convenience key for gold
-					pink: '#FFDEE2',
-					gray: '#8E9196',
-					dark: '#222222'
+					light: '#FFF7EA',         // warm, sandy beige
+					gold: '#E8C966',          // warm and unchanged
+					orange: '#FFB870',        // warm soft orange
+					peach: '#FFE4CF',         // very soft peach background
+					rose:  '#FFE7EC',         // delicate warm pink accent
+					tan:   '#F5DEB8',         // neutral-warm tan
+					brown: '#A68064',         // accent brown for text/shadow
+					dark:  '#442D19',         // deep warm brown (headings)
+					gray:  '#928981',         // soft brownish gray
+					pink:  '#FFDEE2',         // warm pink unchanged
 				}
 			},
 			borderRadius: {
@@ -106,9 +110,9 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
+				playfair: ['Playfair Display', 'serif'],
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
