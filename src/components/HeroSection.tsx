@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 
@@ -13,7 +12,19 @@ const HeroSection = () => {
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left animate-fade-in-up">
             <h1 className="text-4xl md:text-5xl font-playfair font-bold text-salon-dark leading-tight mb-5">
-              Effortless style. <br /> Warm <span className="text-salon-powderPink">welcome.</span>
+              Effortless style. <br />
+              Warm{' '}
+              <span
+                className="relative z-10 px-3 py-1 rounded-lg"
+                style={{
+                  color: '#e275ad',                     // Deeper, punchier pink
+                  textShadow: '0 2px 6px rgba(190,0,60,0.24)', // Soft shadow for pop
+                  background: 'rgba(246,214,225,0.7)',  // Faint background for separation
+                  boxShadow: '0 0 0 4px rgba(246,214,225, 0.24)'
+                }}
+              >
+                welcome.
+              </span>
             </h1>
             <p className="text-lg text-salon-brown mb-8 font-medium">
               A cozy, modern beauty salon in Budapest for vibrant hair moments &amp; personal care, where you always feel at home.
