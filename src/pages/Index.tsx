@@ -10,9 +10,11 @@ import BookingSection from '@/components/BookingSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import NumbersSection from '@/components/NumbersSection';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const Index = () => {
   const [bookingsCount, setBookingsCount] = useState(197);
+  const { t } = useLanguage();
 
   const handleNewBooking = () => setBookingsCount((prev) => prev + 1);
 

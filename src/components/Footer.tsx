@@ -1,7 +1,9 @@
 
 import React from 'react';
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
+  const { t, lang } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -9,20 +11,20 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex-1 text-center md:text-left">
-            <h4 className="text-xl font-semibold font-playfair mb-2 text-salon-powderPink">Hugi szépségfarm</h4>
+            <h4 className="text-xl font-semibold font-playfair mb-2 text-salon-powderPink">{t.salonName}</h4>
             <p className="text-salon-brown">
-              © {currentYear} Hugi szépségfarm – For beautiful moments and joyful style.
+              {t.footer.copyright(currentYear)}
             </p>
           </div>
           <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-center">
-            <a href="/" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Home</a>
-            <a href="#about" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">About</a>
-            <a href="#services" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Services</a>
-            <a href="#gallery" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Gallery</a>
-            <a href="#contact" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Contact</a>
+            <a href="/" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">{t.footer.home}</a>
+            <a href="#about" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">{t.footer.about}</a>
+            <a href="#services" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">{t.footer.services}</a>
+            <a href="#gallery" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">{t.footer.gallery}</a>
+            <a href="#contact" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">{t.footer.contact}</a>
           </div>
           <div className="flex-1 text-center md:text-right">
-            <span className="block text-salon-brown">Follow us:</span>
+            <span className="block text-salon-brown">{t.footer.follow}</span>
             <div className="flex gap-4 mt-1 justify-center md:justify-end">
               <a href="#" aria-label="Facebook" className="hover:text-salon-powderPink transition-colors">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7C18.3 21.1 22 17 22 12z" /></svg>

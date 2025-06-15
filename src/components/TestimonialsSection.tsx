@@ -2,29 +2,30 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from 'lucide-react';
-
-const testimonials = [
-  {
-    name: "Anna Kovács",
-    position: "Regular Client",
-    quote: "The team at Hugi szépségfarm always welcomes me with warmth and care. Every visit feels like coming home!",
-    rating: 5
-  },
-  {
-    name: "Péter Nagy",
-    position: "First-time Client",
-    quote: "A genuinely inviting atmosphere, amazing staff, and beautiful results. Highly recommend this cozy salon.",
-    rating: 5
-  },
-  {
-    name: "Viktória Szabó",
-    position: "Monthly Client",
-    quote: "There’s always a smile and good vibes here. The warm colors and friendly team make every appointment a joy.",
-    rating: 5
-  }
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const TestimonialsSection = () => {
+  const { t } = useLanguage();
+  const testimonials = [
+    {
+      name: t.testimonials.ann.name,
+      position: t.testimonials.ann.position,
+      quote: t.testimonials.ann.quote,
+      rating: 5,
+    },
+    {
+      name: t.testimonials.peter.name,
+      position: t.testimonials.peter.position,
+      quote: t.testimonials.peter.quote,
+      rating: 5,
+    },
+    {
+      name: t.testimonials.viktoria.name,
+      position: t.testimonials.viktoria.position,
+      quote: t.testimonials.viktoria.quote,
+      rating: 5,
+    }
+  ];
   const renderStars = (rating: number) => (
     Array(5).fill(0).map((_, i) => (
       <Star
@@ -38,9 +39,9 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 bg-salon-rose/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Testimonials</h2>
+          <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">{t.testimonials.title}</h2>
           <div className="w-16 h-1 bg-salon-powderPink mx-auto mb-6 rounded"></div>
-          <p className="text-salon-brown font-medium">Our guests always leave with a smile.</p>
+          <p className="text-salon-brown font-medium">{t.testimonials.description}</p>
         </div>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
           {testimonials.map((testimonial, i) => (
@@ -68,7 +69,7 @@ const TestimonialsSection = () => {
             href="#"
             className="inline-block text-salon-powderPink font-bold hover:underline text-lg transition font-playfair"
           >
-            Read More Reviews
+            {t.testimonials.more}
           </a>
         </div>
       </div>

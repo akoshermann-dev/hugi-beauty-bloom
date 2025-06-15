@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -9,27 +10,15 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Clock } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 type BookingSectionProps = {
   onBooking?: () => void;
 };
 
-const services = [
-  "Women's Haircut",
-  "Men's Haircut",
-  "Hair Coloring",
-  "Highlights",
-  "Balayage",
-  "Blow Dry & Styling",
-  "Hair Treatment"
-];
-
-const timeSlots = [
-  "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM",
-  "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
-];
-
 const BookingSection = ({ onBooking }: BookingSectionProps) => {
+  const { t, lang } = useLanguage();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -38,21 +27,29 @@ const BookingSection = ({ onBooking }: BookingSectionProps) => {
   const [time, setTime] = useState("");
   const { toast } = useToast();
 
+  // Use translated services and times
+  const services = t.booking.servicesList;
+  const timeSlots = t.booking.timeSlots;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!name || !email || !phone || !service || !date || !time) {
       toast({
-        title: "Error",
-        description: "Please fill in all fields",
+        title: t.booking.error,
+        description: t.booking.fillFields,
         variant: "destructive"
       });
       return;
     }
 
     toast({
-      title: "Booking Request Sent!",
-      description: `We've received your request for ${service} on ${format(date, "PPP")} at ${time}. We'll contact you soon.`,
+      title: t.booking.requestSent,
+      description: t.booking.confirmation({
+        service,
+        date: format(date, "PPP"),
+        time
+      }),
     });
 
     // Increment the bookings counter (if prop provided)
@@ -70,53 +67,53 @@ const BookingSection = ({ onBooking }: BookingSectionProps) => {
     <section id="booking" className="py-20 bg-gradient-to-b from-salon-rose/70 via-white to-salon-rose/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Book an Appointment</h2>
+          <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">{t.booking.title}</h2>
           <div className="w-16 h-1 bg-salon-powderGrey mx-auto mb-6 rounded"></div>
-          <p className="text-salon-brown font-medium">Reserve your self-care in just a few seconds.</p>
+          <p className="text-salon-brown font-medium">{t.booking.subtitle}</p>
         </div>
         <Card className="max-w-2xl mx-auto bg-white shadow-2xl p-8 border border-salon-powderGrey/30 rounded-2xl">
           <form onSubmit={handleSubmit} className="space-y-7">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
+                <Label htmlFor="name">{t.booking.name}</Label>
                 <Input
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Your name"
+                  placeholder={t.booking.name}
                   className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t.booking.email}</Label>
                 <Input
                   id="email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
+                  placeholder={t.booking.email}
                   className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone</Label>
+                <Label htmlFor="phone">{t.booking.phone}</Label>
                 <Input
                   id="phone"
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Your phone number"
+                  placeholder={t.booking.phone}
                   className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20"
                   required
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="service">Service</Label>
+                <Label htmlFor="service">{t.booking.service}</Label>
                 <Select onValueChange={setService} value={service}>
                   <SelectTrigger id="service" className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20">
-                    <SelectValue placeholder="Select a service" />
+                    <SelectValue placeholder={t.booking.selectService} />
                   </SelectTrigger>
                   <SelectContent className="bg-white">
                     {services.map((item) => (
@@ -128,7 +125,7 @@ const BookingSection = ({ onBooking }: BookingSectionProps) => {
                 </Select>
               </div>
               <div className="space-y-2">
-                <Label>Date</Label>
+                <Label>{t.booking.date}</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
@@ -136,7 +133,7 @@ const BookingSection = ({ onBooking }: BookingSectionProps) => {
                       className="w-full justify-start text-left font-normal bg-salon-powderGrey/10 hover:bg-salon-powderPink/10"
                     >
                       <CalendarIcon className="mr-2 h-4 w-4 text-salon-powderGrey" />
-                      {date ? format(date, "PPP") : "Select a date"}
+                      {date ? format(date, "PPP") : t.booking.date}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0 bg-white">
@@ -151,13 +148,13 @@ const BookingSection = ({ onBooking }: BookingSectionProps) => {
                 </Popover>
               </div>
               <div className="space-y-2">
-                <Label>Time</Label>
+                <Label>{t.booking.time}</Label>
                 <Select onValueChange={setTime} value={time}>
                   <SelectTrigger className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/10">
-                    <SelectValue placeholder="Select a time">
+                    <SelectValue placeholder={t.booking.selectTime}>
                       <div className="flex items-center">
                         <Clock className="mr-2 h-4 w-4 text-salon-powderGrey" />
-                        {time || "Select a time"}
+                        {time || t.booking.selectTime}
                       </div>
                     </SelectValue>
                   </SelectTrigger>
@@ -175,10 +172,10 @@ const BookingSection = ({ onBooking }: BookingSectionProps) => {
               type="submit"
               className="w-full bg-salon-powderPink hover:bg-salon-powderGrey text-salon-dark font-bold px-6 py-3 rounded-full shadow-lg transition"
             >
-              Request Appointment
+              {t.booking.request}
             </Button>
             <p className="text-xs text-salon-brown text-center mt-3 font-medium">
-              By booking, you agree to our cancellation policy.
+              {t.booking.policy}
             </p>
           </form>
         </Card>
