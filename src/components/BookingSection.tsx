@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -64,15 +63,15 @@ const BookingSection = () => {
   };
 
   return (
-    <section id="booking" className="py-20 bg-salon-peach/70">
+    <section id="booking" className="py-20 bg-salon-sage/15">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Book an Appointment</h2>
-          <div className="w-20 h-1 bg-salon-orange mx-auto mb-6 rounded-lg"></div>
-          <p className="text-salon-brown max-w-xl mx-auto font-medium">We look forward to pampering you in our warm, welcoming space!</p>
+          <div className="w-20 h-1 bg-salon-bronze mx-auto mb-6 rounded-lg"></div>
+          <p className="text-salon-brown max-w-xl mx-auto font-medium">Let us welcome you—reserve your fresh and relaxing beauty experience!</p>
         </div>
         
-        <Card className="max-w-2xl mx-auto bg-salon-light/90 shadow-2xl p-8 border-2 border-salon-peach rounded-2xl">
+        <Card className="max-w-2xl mx-auto bg-salon-light/95 shadow-2xl p-8 border-2 border-salon-sage rounded-2xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">

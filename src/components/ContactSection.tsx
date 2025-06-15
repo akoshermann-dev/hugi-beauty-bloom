@@ -22,17 +22,17 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-salon-peach/50 to-salon-light">
+    <section id="contact" className="py-20 bg-gradient-to-br from-salon-sage/10 to-salon-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Contact Us</h2>
-          <div className="w-20 h-1 bg-salon-orange mx-auto mb-6 rounded-lg"></div>
-          <p className="text-salon-brown max-w-xl mx-auto font-medium">Have questions or want to say hello? Our doors and hearts are always open!</p>
+          <div className="w-20 h-1 bg-salon-bronze mx-auto mb-6 rounded-lg"></div>
+          <p className="text-salon-brown max-w-xl mx-auto font-medium">Questions or just want to say hi? We can't wait to meet you!</p>
         </div>
         
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="lg:w-1/2 space-y-8">
-            <div className="bg-salon-peach/90 p-8 rounded-lg shadow-xl border border-salon-peach">
+            <div className="bg-salon-sage/40 p-8 rounded-lg shadow-xl border border-salon-sage">
               <h3 className="text-2xl font-playfair font-semibold mb-6 text-salon-dark">Contact Information</h3>
               
               <div className="space-y-6">
@@ -88,8 +88,8 @@ const ContactSection = () => {
               </div>
             </div>
             
-            <div className="bg-salon-light p-4 rounded-lg shadow-md border border-salon-peach/50">
-              <div className="aspect-video w-full rounded bg-salon-peach/70">
+            <div className="bg-salon-light p-4 rounded-lg shadow-md border border-salon-sage/50">
+              <div className="aspect-video w-full rounded bg-salon-sage/20">
                 {/* Replace with actual Google Maps embed */}
                 <div className="h-full w-full flex items-center justify-center text-salon-brown font-semibold">
                   Map would be displayed here
@@ -99,7 +99,7 @@ const ContactSection = () => {
           </div>
           
           <div className="lg:w-1/2">
-            <div className="bg-salon-peach/80 p-8 rounded-lg shadow-xl border border-salon-peach">
+            <div className="bg-salon-rose/70 p-8 rounded-lg shadow-xl border border-salon-sage/70">
               <h3 className="text-2xl font-playfair font-semibold mb-6 text-salon-dark">Send us a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">

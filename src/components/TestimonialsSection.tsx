@@ -29,23 +29,23 @@ const TestimonialsSection = () => {
     return Array(5).fill(0).map((_, i) => (
       <Star 
         key={i} 
-        className={`h-4 w-4 ${i < rating ? 'text-salon-gold fill-salon-gold' : 'text-salon-peach'}`} 
+        className={`h-4 w-4 ${i < rating ? 'text-salon-bronze fill-salon-bronze' : 'text-salon-sage'}`} 
       />
     ));
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-salon-peach/40">
+    <section id="testimonials" className="py-20 bg-salon-sage/15">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Client Testimonials</h2>
-          <div className="w-20 h-1 bg-salon-orange mx-auto mb-6 rounded-lg"></div>
-          <p className="text-salon-brown max-w-xl mx-auto font-medium">Hear how our warmth and joy shines through for our clients.</p>
+          <div className="w-20 h-1 bg-salon-blush mx-auto mb-6 rounded-lg"></div>
+          <p className="text-salon-brown max-w-xl mx-auto font-medium">Hear how our caring energy shines for every client—a fresh new feeling!</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-salon-light/70 border-none shadow-xl hover:shadow-2xl transition-shadow rounded-xl">
+            <Card key={index} className="bg-salon-light/90 border-none shadow-xl hover:shadow-2xl transition-shadow rounded-xl">
               <CardContent className="p-6">
                 <div className="flex mb-4">
                   {renderStars(testimonial.rating)}
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
                   <p className="text-salon-brown italic font-medium">"{testimonial.quote}"</p>
                 </blockquote>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-salon-orange/20 flex items-center justify-center text-salon-orange font-bold font-playfair">
+                  <div className="w-12 h-12 rounded-full bg-salon-bronze/15 flex items-center justify-center text-salon-bronze font-bold font-playfair">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div className="ml-4">
@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <a 
             href="#" 
-            className="inline-flex items-center text-salon-orange hover:text-salon-gold font-semibold transition-colors"
+            className="inline-flex items-center text-salon-blush hover:text-salon-bronze font-semibold transition-colors"
           >
             Read More Reviews
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
