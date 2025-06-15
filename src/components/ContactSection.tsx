@@ -1,22 +1,11 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { useToast } from "../hooks/use-toast";
+import { Phone, Mail, MapPin, Clock, Facebook } from "lucide-react";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. We'll get back to you shortly!",
-    });
-    (e.target as HTMLFormElement).reset();
+  const openMessenger = () => {
+    window.open("https://m.me/hugiszepsegfarm", "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -58,33 +47,20 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
-            <div className="bg-white/90 p-8 rounded-2xl shadow-xl border border-salon-powderPink/10">
-              <h3 className="text-xl font-playfair font-semibold mb-6 text-salon-dark">Send a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="space-y-1">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" name="name" placeholder="Your name" required className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="Your email" required className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" name="subject" placeholder="Subject" required className="bg-salon-powderGrey/10 focus:bg-salon-powderPink/20" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" name="message" placeholder="Your message" minLength={10} className="min-h-32 bg-salon-powderGrey/10 focus:bg-salon-powderPink/20" required />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-salon-powderPink hover:bg-salon-powderGrey text-salon-dark font-bold rounded-full px-6 py-3 shadow-lg transition"
-                >
-                  Send Message
-                </Button>
-              </form>
+          <div className="lg:w-1/2 flex flex-col items-center justify-center">
+            <div className="bg-white/90 p-8 rounded-2xl shadow-xl border border-salon-powderPink/10 flex flex-col items-center">
+              <h3 className="text-xl font-playfair font-semibold mb-6 text-salon-dark">Chat with us on Messenger</h3>
+              <Button
+                onClick={openMessenger}
+                className="w-full bg-salon-powderPink hover:bg-salon-powderGrey text-salon-dark font-bold rounded-full px-6 py-3 shadow-lg transition flex items-center justify-center gap-2 text-base"
+              >
+                <Facebook className="w-5 h-5" />
+                Open Messenger Chat
+              </Button>
+              <p className="mt-6 text-salon-brown text-center text-sm">
+                Click to start a Facebook Messenger conversation with our team.<br />
+                We're happy to help with any questions!
+              </p>
             </div>
           </div>
         </div>
