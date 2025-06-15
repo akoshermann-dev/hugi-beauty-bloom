@@ -4,12 +4,12 @@ import { Star, Heart, CircleCheck } from "lucide-react";
 
 const features = [
   {
-    icon: <Star className="w-6 h-6 text-salon-bronze" />,
+    icon: <Star className="w-6 h-6 text-salon-powderPink" />,
     title: "Passionate Stylists",
     description: "Talented, caring professionals focused on your best style and comfort.",
   },
   {
-    icon: <Heart className="w-6 h-6 text-salon-sage" />,
+    icon: <Heart className="w-6 h-6 text-salon-powderGrey" />,
     title: "Warm Atmosphere",
     description: "Soothing colors, gentle lights – a true urban retreat.",
   },
@@ -22,11 +22,11 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-salon-light">
+    <section id="about" className="py-20 bg-salon-rose">
       <div className="container mx-auto px-4">
-        <div className="bg-white/80 rounded-2xl shadow-xl p-8 md:p-14 flex flex-col md:flex-row gap-10 items-center">
+        <div className="bg-white/90 rounded-2xl shadow-xl p-8 md:p-14 flex flex-col md:flex-row gap-10 items-center">
           <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
-            <div className="bg-salon-blush/40 border-2 border-salon-rose rounded-2xl p-2 shadow aspect-video w-96 max-w-full">
+            <div className="bg-salon-powderPink/40 border-2 border-salon-powderGrey rounded-2xl p-2 shadow aspect-video w-96 max-w-full">
               <img
                 src="/placeholder.svg"
                 alt="Salon interior"
@@ -41,7 +41,7 @@ const AboutSection = () => {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-4">
               {features.map((feature, idx) => (
-                <div key={idx} className="flex flex-col items-center p-4 bg-salon-sage/20 rounded-lg shadow hover:shadow-md transition animate-pop-in"
+                <div key={idx} className="flex flex-col items-center p-4 bg-salon-powderGrey/20 rounded-lg shadow hover:shadow-md transition animate-pop-in"
                   style={{ animationDelay: `${0.2 + idx * 0.1}s`, animationFillMode: 'backwards' }}>
                   <div className="mb-2">{feature.icon}</div>
                   <h4 className="font-semibold text-md text-salon-dark mb-1">{feature.title}</h4>

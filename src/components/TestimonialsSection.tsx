@@ -29,17 +29,17 @@ const TestimonialsSection = () => {
     Array(5).fill(0).map((_, i) => (
       <Star
         key={i}
-        className={`h-4 w-4 ${i < rating ? 'text-salon-bronze fill-salon-bronze' : 'text-salon-sage'}`}
+        className={`h-4 w-4 ${i < rating ? 'text-salon-powderPink fill-salon-powderPink' : 'text-salon-powderGrey'}`}
       />
     ))
   );
 
   return (
-    <section id="testimonials" className="py-20 bg-salon-light/60">
+    <section id="testimonials" className="py-20 bg-salon-rose/70">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Testimonials</h2>
-          <div className="w-16 h-1 bg-salon-bronze mx-auto mb-6 rounded"></div>
+          <div className="w-16 h-1 bg-salon-powderPink mx-auto mb-6 rounded"></div>
           <p className="text-salon-brown font-medium">Our guests always leave with a smile.</p>
         </div>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
@@ -51,12 +51,12 @@ const TestimonialsSection = () => {
                   <p className="text-salon-brown italic font-medium">"{testimonial.quote}"</p>
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-salon-bronze/20 flex items-center justify-center font-bold font-playfair text-salon-bronze">
+                  <div className="w-11 h-11 rounded-full bg-salon-powderPink/40 flex items-center justify-center font-bold font-playfair text-salon-powderPink">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
                     <h4 className="font-semibold text-salon-dark">{testimonial.name}</h4>
-                    <span className="text-xs text-salon-gray">{testimonial.position}</span>
+                    <span className="text-xs text-salon-brown">{testimonial.position}</span>
                   </div>
                 </div>
               </CardContent>
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <a
             href="#"
-            className="inline-block text-salon-bronze font-bold hover:underline text-lg transition"
+            className="inline-block text-salon-powderPink font-bold hover:underline text-lg transition"
           >
             Read More Reviews
           </a>

@@ -63,16 +63,16 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         salon: {
-          light: '#F8F8F6',       // very light, gentle gray-beige
-          sage:  '#C9D6CC',       // fresh sage green, replaces some peach backgrounds
-          bronze: '#C09D5E',      // metallic bronze replaces gold accents
-          blush: '#F5C6CB',       // soft pink accent
-          terra: '#DBC4A0',       // warm tan background
-          rose:  '#F7E1E3',       // lighter, more elegant pink
-          brown: '#715C46',       // slightly richer brown for contrast
-          dark:  '#22201B',       // deeper brown for headings
-          green: '#B6C5A8',       // muted pistachio for borders
-          gray:  '#A59E94',       // warm gray for secondary text
+          light: '#FFFFFF',      // base background: pure white
+          powderPink: '#F6D6E1', // powder pink
+          powderGrey: '#D3D3DB', // soft, powdery grey
+          rose:  '#F7EBF0',     // background tint, very pale/pinkish
+          bronze: '#C09D5E',    // keeping a single accent metallic for logo/buttons if needed
+          blush: '#E8B2C8',     // a secondary pink (for gradients/hover)
+          dark:  '#464655',     // deep muted grey for text
+          brown: '#A08F95',     // muted brownish-grey for secondary text
+          sage:  '#E5E6E4',     // very pale grey-green (can use for dividers)
+          gray:  '#B2B6C1',     // cool grey for UI elements
         }
       },
       borderRadius: {
