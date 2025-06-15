@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -36,8 +37,7 @@ const BookingSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
+
     if (!name || !email || !phone || !service || !date || !time) {
       toast({
         title: "Error",
@@ -46,14 +46,12 @@ const BookingSection = () => {
       });
       return;
     }
-    
-    // Submit booking (in a real app, this would call an API)
+
     toast({
       title: "Booking Request Sent!",
-      description: `We've received your booking request for ${service} on ${format(date, "PPP")} at ${time}. We'll contact you shortly to confirm.`,
+      description: `We've received your request for ${service} on ${format(date, "PPP")} at ${time}. We'll contact you soon.`,
     });
-    
-    // Reset form
+
     setName("");
     setEmail("");
     setPhone("");
@@ -63,59 +61,58 @@ const BookingSection = () => {
   };
 
   return (
-    <section id="booking" className="py-20 bg-salon-sage/15">
+    <section id="booking" className="py-20 bg-gradient-to-b from-salon-blush/20 via-salon-sage/10 to-salon-light">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Book an Appointment</h2>
-          <div className="w-20 h-1 bg-salon-bronze mx-auto mb-6 rounded-lg"></div>
-          <p className="text-salon-brown max-w-xl mx-auto font-medium">Let us welcome you—reserve your fresh and relaxing beauty experience!</p>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Book an Appointment</h2>
+          <div className="w-16 h-1 bg-salon-sage mx-auto mb-6 rounded"></div>
+          <p className="text-salon-brown font-medium">Reserve your self-care in just a few seconds.</p>
         </div>
-        
-        <Card className="max-w-2xl mx-auto bg-salon-light/95 shadow-2xl p-8 border-2 border-salon-sage rounded-2xl">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <Card className="max-w-2xl mx-auto bg-white shadow-2xl p-8 border border-salon-bronze/20 rounded-2xl">
+          <form onSubmit={handleSubmit} className="space-y-7">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input 
-                  id="name" 
-                  value={name} 
-                  onChange={(e) => setName(e.target.value)} 
+                <Input
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Your name"
-                  className="bg-salon-peach/30 focus:bg-salon-peach/60"
+                  className="bg-salon-light focus:bg-salon-blush/30"
+                  required
                 />
               </div>
-              
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  value={email} 
-                  onChange={(e) => setEmail(e.target.value)} 
+                <Input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email"
-                  className="bg-salon-peach/30 focus:bg-salon-peach/60"
+                  className="bg-salon-light focus:bg-salon-blush/30"
+                  required
                 />
               </div>
-              
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone</Label>
-                <Input 
-                  id="phone" 
-                  type="tel" 
-                  value={phone} 
-                  onChange={(e) => setPhone(e.target.value)} 
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder="Your phone number"
-                  className="bg-salon-peach/30 focus:bg-salon-peach/60"
+                  className="bg-salon-light focus:bg-salon-blush/30"
+                  required
                 />
               </div>
-              
               <div className="space-y-2">
                 <Label htmlFor="service">Service</Label>
                 <Select onValueChange={setService} value={service}>
-                  <SelectTrigger id="service" className="bg-salon-peach/30 focus:bg-salon-peach/60">
+                  <SelectTrigger id="service" className="bg-salon-light focus:bg-salon-blush/30">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
-                  <SelectContent className="bg-salon-peach/90">
+                  <SelectContent className="bg-white">
                     {services.map((item) => (
                       <SelectItem key={item} value={item}>
                         {item}
@@ -124,43 +121,41 @@ const BookingSection = () => {
                   </SelectContent>
                 </Select>
               </div>
-              
               <div className="space-y-2">
                 <Label>Date</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
                       variant="outline"
-                      className="w-full justify-start text-left font-normal bg-salon-peach/30 hover:bg-salon-peach/60"
+                      className="w-full justify-start text-left font-normal bg-salon-light hover:bg-salon-blush/30"
                     >
-                      <CalendarIcon className="mr-2 h-4 w-4 text-salon-orange" />
+                      <CalendarIcon className="mr-2 h-4 w-4 text-salon-sage" />
                       {date ? format(date, "PPP") : "Select a date"}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0 bg-salon-peach/90">
+                  <PopoverContent className="w-auto p-0 bg-white">
                     <Calendar
                       mode="single"
                       selected={date}
                       onSelect={setDate}
                       initialFocus
-                      disabled={(date) => date < new Date()}
+                      disabled={(d) => d < new Date()}
                     />
                   </PopoverContent>
                 </Popover>
               </div>
-              
               <div className="space-y-2">
                 <Label>Time</Label>
                 <Select onValueChange={setTime} value={time}>
-                  <SelectTrigger className="bg-salon-peach/30 focus:bg-salon-peach/60">
+                  <SelectTrigger className="bg-salon-light focus:bg-salon-blush/30">
                     <SelectValue placeholder="Select a time">
                       <div className="flex items-center">
-                        <Clock className="mr-2 h-4 w-4 text-salon-orange" />
+                        <Clock className="mr-2 h-4 w-4 text-salon-sage" />
                         {time || "Select a time"}
                       </div>
                     </SelectValue>
                   </SelectTrigger>
-                  <SelectContent className="bg-salon-peach/90">
+                  <SelectContent className="bg-white">
                     {timeSlots.map((slot) => (
                       <SelectItem key={slot} value={slot}>
                         {slot}
@@ -170,16 +165,14 @@ const BookingSection = () => {
                 </Select>
               </div>
             </div>
-            
-            <Button 
-              type="submit" 
-              className="w-full bg-salon-orange hover:bg-salon-gold text-white font-bold px-6 py-3 rounded-full shadow-lg"
+            <Button
+              type="submit"
+              className="w-full bg-salon-bronze hover:bg-salon-sage text-white font-bold px-6 py-3 rounded-full shadow-lg transition"
             >
               Request Appointment
             </Button>
-            
-            <p className="text-xs text-salon-brown text-center mt-4 font-medium">
-              By booking an appointment, you agree to our cancellation policy.
+            <p className="text-xs text-salon-brown text-center mt-3 font-medium">
+              By booking, you agree to our cancellation policy.
             </p>
           </form>
         </Card>

@@ -2,84 +2,44 @@
 import React from 'react';
 
 const galleryImages = [
-  { 
-    url: "/placeholder.svg",
-    alt: "Elegant haircut",
-    caption: "Modern Bob"
-  },
-  { 
-    url: "/placeholder.svg",
-    alt: "Colorful hair transformation",
-    caption: "Vibrant Balayage"
-  },
-  { 
-    url: "/placeholder.svg",
-    alt: "Wedding hairstyle",
-    caption: "Bridal Updo"
-  },
-  { 
-    url: "/placeholder.svg",
-    alt: "Blonde highlights",
-    caption: "Beachy Highlights"
-  },
-  { 
-    url: "/placeholder.svg",
-    alt: "Curly hairstyle",
-    caption: "Defined Curls"
-  },
-  { 
-    url: "/placeholder.svg",
-    alt: "Men's haircut",
-    caption: "Modern Fade"
-  }
+  { url: "/placeholder.svg", alt: "Modern haircut", caption: "Modern Bob" },
+  { url: "/placeholder.svg", alt: "Color transformation", caption: "Balayage" },
+  { url: "/placeholder.svg", alt: "Wedding hair", caption: "Bridal Updo" },
+  { url: "/placeholder.svg", alt: "Highlights", caption: "Beachy Highlights" },
+  { url: "/placeholder.svg", alt: "Curly style", caption: "Curls" },
+  { url: "/placeholder.svg", alt: "Men's cut", caption: "Modern Fade" },
 ];
 
-const GallerySection = () => {
-  return (
-    <section id="gallery" className="py-20 bg-gradient-to-br from-salon-sage/15 via-salon-light to-salon-rose">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-salon-dark">Our Gallery</h2>
-          <div className="w-20 h-1 bg-salon-blush mx-auto mb-6 rounded-lg"></div>
-          <p className="text-salon-brown max-w-xl mx-auto font-medium">See the beauty and joy we create—one guest at a time.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <div 
-              key={index} 
-              className="group relative rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-salon-sage"
-            >
-              <div className="aspect-square bg-salon-light">
-                <img 
-                  src={image.url} 
-                  alt={image.alt} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-salon-brown/80 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex items-end">
-                <div className="p-4 w-full">
-                  <h3 className="text-white text-xl font-bold font-playfair">{image.caption}</h3>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-10">
-          <a 
-            href="#" 
-            className="inline-flex items-center text-salon-blush hover:text-salon-bronze font-semibold transition-colors"
-          >
-            View More on Instagram
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </div>
+const GallerySection = () => (
+  <section id="gallery" className="py-20 bg-salon-rose/20">
+    <div className="container mx-auto px-4">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Gallery</h2>
+        <div className="w-16 h-1 bg-salon-blush mx-auto mb-6 rounded"></div>
+        <p className="text-salon-brown font-medium">Beauty, joy, and transformation—see what we create together.</p>
       </div>
-    </section>
-  );
-};
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        {galleryImages.map((img, i) => (
+          <div key={i} className="relative overflow-hidden rounded-xl bg-white border border-salon-sage/30 shadow hover:shadow-lg transition animate-fade-in-up">
+            <div className="aspect-square w-full bg-salon-light">
+              <img src={img.url} alt={img.alt} className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-salon-brown/75 to-transparent">
+              <span className="text-white font-playfair font-semibold text-lg">{img.caption}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="text-center mt-10">
+        <a
+          href="#"
+          className="inline-block text-salon-bronze font-bold hover:underline text-lg mt-6 transition"
+        >
+          View More on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+);
 
 export default GallerySection;

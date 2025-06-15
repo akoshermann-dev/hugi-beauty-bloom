@@ -4,40 +4,37 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center pt-24 bg-gradient-to-br from-salon-sage via-salon-light to-salon-rose relative overflow-hidden">
-      <div className="absolute top-[-6rem] left-1/2 -translate-x-1/2 w-[40rem] h-[18rem] rounded-full bg-salon-bronze opacity-15 blur-3xl pointer-events-none" />
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-10 md:mb-0 animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-salon-dark leading-tight drop-shadow-lg">
-              Welcome to <span className="text-salon-bronze">Hugi szépségfarm</span>
+    <section className="pt-28 pb-20 bg-gradient-to-br from-salon-blush via-salon-sage/30 to-salon-light relative min-h-[70vh] flex items-center">
+      <div className="absolute inset-0 pointer-events-none flex">
+        <div className="w-1/2 bg-salon-bronze/10" />
+        <div className="w-1/2 bg-salon-rose/10" />
+      </div>
+      <div className="container mx-auto px-4 z-10 relative">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-12">
+          <div className="md:w-1/2 text-center md:text-left animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-playfair font-bold text-salon-dark leading-tight mb-5">
+              Effortless style. <br /> Warm <span className="text-salon-bronze">welcome.</span>
             </h1>
-            <p className="text-lg text-salon-brown mb-8 max-w-md font-medium">
-              A warm, modern oasis for beautiful hair and thoughtful service.<br />
-              Embrace your best self in comfort and style!
+            <p className="text-lg text-salon-brown mb-8 font-medium">
+              A cozy, modern beauty salon in Budapest for vibrant hair moments &amp; personal care, where you always feel at home.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-salon-bronze hover:bg-salon-sage text-white font-bold px-8 py-6 shadow-xl rounded-full" size="lg">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <Button className="bg-salon-bronze hover:bg-salon-rose text-white px-8 py-4 text-lg font-semibold rounded-full shadow transition-colors duration-150">
                 Book Appointment
               </Button>
-              <Button variant="outline" className="border-salon-bronze text-salon-brown hover:bg-salon-blush font-bold px-8 py-6 rounded-full" size="lg">
+              <Button variant="outline" className="border-salon-bronze text-salon-bronze hover:bg-salon-blush/40 px-8 py-4 text-lg font-semibold rounded-full transition">
                 View Services
               </Button>
             </div>
           </div>
-          <div className="md:w-1/2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div className="relative">
-              <div className="absolute -left-10 -top-6 w-56 h-56 bg-salon-sage rounded-full opacity-30 blur-2xl"></div>
-              <div className="absolute -right-4 -bottom-8 w-64 h-64 bg-salon-bronze rounded-full opacity-20 blur-2xl"></div>
-              <div className="bg-salon-light p-4 rounded-2xl shadow-lg relative">
-                <div className="aspect-[3/4] rounded-xl overflow-hidden border-4 border-salon-bronze bg-salon-rose">
-                  <img 
-                    src="/placeholder.svg"
-                    alt="Hairstylist working"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+          <div className="md:w-1/2 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.12s' }}>
+            <div className="relative bg-salon-light border-4 border-salon-sage rounded-2xl shadow-lg p-2 overflow-hidden w-64 h-80 flex">
+              <img
+                src="/placeholder.svg"
+                alt="Happy salon guest"
+                className="object-cover w-full h-full rounded-xl"
+              />
+              <div className="absolute -top-6 -right-8 w-40 h-40 bg-salon-bronze/20 rounded-full blur-2xl" />
             </div>
           </div>
         </div>
