@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				salon: {
-					light: '#F1F0FB',
+					light: '#C0C0C0', // updated from #F1F0FB (purple) to silver
 					purple: '#E8C966', // !! replaced light-purple with light-gold !!
 					gold: '#E8C966', // added convenience key for gold
 					pink: '#FFDEE2',
