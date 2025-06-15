@@ -10,6 +10,10 @@ import { format } from "date-fns";
 import { Calendar as CalendarIcon, Clock } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 
+type BookingSectionProps = {
+  onBooking?: () => void;
+};
+
 const services = [
   "Women's Haircut",
   "Men's Haircut",
@@ -25,7 +29,7 @@ const timeSlots = [
   "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
 ];
 
-const BookingSection = () => {
+const BookingSection = ({ onBooking }: BookingSectionProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -50,6 +54,9 @@ const BookingSection = () => {
       title: "Booking Request Sent!",
       description: `We've received your request for ${service} on ${format(date, "PPP")} at ${time}. We'll contact you soon.`,
     });
+
+    // Increment the bookings counter (if prop provided)
+    if (onBooking) onBooking();
 
     setName("");
     setEmail("");
