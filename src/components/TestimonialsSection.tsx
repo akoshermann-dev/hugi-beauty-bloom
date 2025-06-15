@@ -29,7 +29,7 @@ const TestimonialsSection = () => {
     return Array(5).fill(0).map((_, i) => (
       <Star 
         key={i} 
-        className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+        className={`h-4 w-4 ${i < rating ? 'text-salon-gold fill-salon-gold' : 'text-gray-300'}`} 
       />
     ));
   };
@@ -39,7 +39,7 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-salon-dark">Client Testimonials</h2>
-          <div className="w-20 h-1 bg-salon-purple mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-salon-gold mx-auto mb-6"></div>
           <p className="text-salon-gray max-w-xl mx-auto">Hear what our clients have to say about their experiences at Hugi szépségfarm.</p>
         </div>
         
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
                   <p className="text-salon-gray italic">"{testimonial.quote}"</p>
                 </blockquote>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-salon-purple/20 flex items-center justify-center text-salon-purple font-bold">
+                  <div className="w-12 h-12 rounded-full bg-salon-gold/30 flex items-center justify-center text-salon-gold font-bold">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div className="ml-4">
@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <a 
             href="#" 
-            className="inline-flex items-center text-salon-purple hover:text-purple-600 font-semibold transition-colors"
+            className="inline-flex items-center text-salon-gold hover:text-yellow-600 font-semibold transition-colors"
           >
             Read More Reviews
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">

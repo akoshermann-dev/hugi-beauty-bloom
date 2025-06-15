@@ -10,16 +10,16 @@ const HeroSection = () => {
           <div className="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-salon-dark leading-tight">
               Beauty & Style<br />
-              <span className="text-salon-purple">Redefined</span>
+              <span className="text-salon-gold">Redefined</span>
             </h1>
             <p className="text-lg text-salon-gray mb-8 max-w-md">
               Experience premium hair and beauty services in a relaxing atmosphere at Hugi szépségfarm.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-salon-purple hover:bg-purple-400 text-white px-8 py-6" size="lg">
+              <Button className="bg-salon-gold hover:bg-yellow-300 text-white px-8 py-6" size="lg">
                 Book Appointment
               </Button>
-              <Button variant="outline" className="border-salon-purple text-salon-dark hover:bg-salon-light px-8 py-6" size="lg">
+              <Button variant="outline" className="border-salon-gold text-salon-dark hover:bg-salon-light px-8 py-6" size="lg">
                 View Services
               </Button>
             </div>
@@ -27,7 +27,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 animate-fadeIn" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-64 h-64 bg-salon-pink rounded-full opacity-30 blur-2xl"></div>
-              <div className="absolute -right-4 -bottom-4 w-64 h-64 bg-salon-purple rounded-full opacity-30 blur-2xl"></div>
+              <div className="absolute -right-4 -bottom-4 w-64 h-64 bg-salon-gold rounded-full opacity-30 blur-2xl"></div>
               <div className="bg-white p-4 rounded-2xl shadow-lg relative">
                 <div className="aspect-[3/4] bg-gray-200 rounded-xl overflow-hidden">
                   <img 

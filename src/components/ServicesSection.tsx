@@ -39,7 +39,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-salon-dark">Our Services</h2>
-          <div className="w-20 h-1 bg-salon-purple mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-salon-gold mx-auto mb-6"></div>
           <p className="text-salon-gray max-w-xl mx-auto">Explore our range of professional hair services designed to bring out your best look.</p>
         </div>
         
@@ -48,19 +48,19 @@ const ServicesSection = () => {
             <TabsList className="bg-white">
               <TabsTrigger 
                 value="haircuts"
-                className="data-[state=active]:bg-salon-purple data-[state=active]:text-white"
+                className="data-[state=active]:bg-salon-gold data-[state=active]:text-white"
               >
                 {icons.haircuts} <span className="ml-2">Haircuts</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="coloring"
-                className="data-[state=active]:bg-salon-purple data-[state=active]:text-white"
+                className="data-[state=active]:bg-salon-gold data-[state=active]:text-white"
               >
                 {icons.coloring} <span className="ml-2">Coloring</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="styling"
-                className="data-[state=active]:bg-salon-purple data-[state=active]:text-white"
+                className="data-[state=active]:bg-salon-gold data-[state=active]:text-white"
               >
                 {icons.styling} <span className="ml-2">Styling</span>
               </TabsTrigger>
@@ -77,10 +77,10 @@ const ServicesSection = () => {
                   >
                     <div className="flex justify-between items-start mb-4">
                       <h3 className="text-xl font-semibold text-salon-dark">{service.name}</h3>
-                      <span className="text-salon-purple font-semibold">{service.price}</span>
+                      <span className="text-salon-gold font-semibold">{service.price}</span>
                     </div>
                     <p className="text-salon-gray mb-4">{service.description}</p>
-                    <Button className="w-full bg-transparent hover:bg-salon-purple text-salon-purple hover:text-white border border-salon-purple transition-colors">
+                    <Button className="w-full bg-transparent hover:bg-salon-gold text-salon-gold hover:text-white border border-salon-gold transition-colors">
                       Book Now
                     </Button>
                   </div>
@@ -92,7 +92,7 @@ const ServicesSection = () => {
         
         <div className="text-center mt-12">
           <p className="text-salon-gray mb-6">Want to know more about our services or discuss custom options?</p>
-          <Button className="bg-salon-purple hover:bg-purple-400 text-white">
+          <Button className="bg-salon-gold hover:bg-yellow-300 text-white">
             Contact Us
           </Button>
         </div>

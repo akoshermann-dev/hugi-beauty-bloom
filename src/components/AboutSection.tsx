@@ -4,17 +4,17 @@ import { Scissors, Award, ThumbsUp } from 'lucide-react';
 
 const features = [
   {
-    icon: <Scissors className="w-6 h-6 text-salon-purple" />,
+    icon: <Scissors className="w-6 h-6 text-salon-gold" />,
     title: "Expert Stylists",
     description: "Our team of professional stylists are passionate about creating the perfect look for you."
   },
   {
-    icon: <Award className="w-6 h-6 text-salon-purple" />,
+    icon: <Award className="w-6 h-6 text-salon-gold" />,
     title: "Premium Products",
     description: "We use only the finest products to ensure the best results and care for your hair."
   },
   {
-    icon: <ThumbsUp className="w-6 h-6 text-salon-purple" />,
+    icon: <ThumbsUp className="w-6 h-6 text-salon-gold" />,
     title: "Satisfaction Guaranteed",
     description: "Your happiness is our priority. We're not satisfied until you're delighted with your experience."
   }
@@ -26,14 +26,14 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-salon-dark">About Us</h2>
-          <div className="w-20 h-1 bg-salon-purple mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-salon-gold mx-auto mb-6"></div>
           <p className="text-salon-gray max-w-xl mx-auto">Discover the story behind Hugi szépségfarm and our commitment to beauty and excellence.</p>
         </div>
         
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <div className="relative">
-              <div className="absolute -left-3 -top-3 right-3 bottom-3 border-2 border-salon-purple rounded-lg"></div>
+              <div className="absolute -left-3 -top-3 right-3 bottom-3 border-2 border-salon-gold rounded-lg"></div>
               <div className="bg-salon-light p-4 rounded-lg relative">
                 <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
                   <img 

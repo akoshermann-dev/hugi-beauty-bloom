@@ -29,7 +29,7 @@ const Header = () => {
           <a href="#testimonials" className="text-salon-gray hover:text-salon-dark transition-colors">Testimonials</a>
           <a href="#contact" className="text-salon-gray hover:text-salon-dark transition-colors">Contact</a>
         </nav>
-        <Button className="bg-salon-purple hover:bg-purple-400 text-white">Book Now</Button>
+        <Button className="bg-salon-gold hover:bg-yellow-300 text-white">Book Now</Button>
       </div>
     </header>
   );

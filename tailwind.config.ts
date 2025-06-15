@@ -65,7 +65,8 @@ export default {
 				},
 				salon: {
 					light: '#F1F0FB',
-					purple: '#D6BCFA',
+					purple: '#E8C966', // !! replaced light-purple with light-gold !!
+					gold: '#E8C966', // added convenience key for gold
 					pink: '#FFDEE2',
 					gray: '#8E9196',
 					dark: '#222222'
@@ -110,3 +111,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
