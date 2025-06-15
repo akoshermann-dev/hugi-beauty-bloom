@@ -19,7 +19,7 @@ const NumbersSection = ({ bookingsCount }: NumbersSectionProps) => (
         </p>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="bg-white rounded-2xl shadow-lg p-10 flex items-center justify-center gap-2 animate-pop-in border border-salon-powderGrey/40 max-w-xs w-full">
+        <div className="bg-white rounded-2xl shadow-lg p-10 flex items-center justify-center gap-2 animate-pop-in border border-salon-powderGrey/30 max-w-xs w-full">
           <span className="text-5xl font-extrabold font-playfair text-salon-powderPink transition-all duration-300">
             {bookingsCount}
           </span>

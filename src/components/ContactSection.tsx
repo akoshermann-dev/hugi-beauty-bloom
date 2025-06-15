@@ -9,7 +9,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-salon-rose/70">
+    <section id="contact" className="py-20 bg-salon-rose/80">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Contact</h2>
@@ -18,7 +18,7 @@ const ContactSection = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/2 space-y-8">
-            <div className="bg-white border border-salon-powderGrey/30 p-8 rounded-2xl shadow-lg">
+            <div className="bg-white border border-salon-powderGrey/20 p-8 rounded-2xl shadow-lg animate-fade-in-up">
               <h3 className="text-xl font-playfair font-semibold mb-5 text-salon-dark">Contact Info</h3>
               <div className="space-y-5 text-salon-brown">
                 <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="lg:w-1/2 flex flex-col items-center justify-center">
-            <div className="bg-white/90 p-8 rounded-2xl shadow-xl border border-salon-powderPink/10 flex flex-col items-center">
+            <div className="bg-white/90 p-8 rounded-2xl shadow-xl border border-salon-powderPink/10 flex flex-col items-center animate-fade-in-up">
               <h3 className="text-xl font-playfair font-semibold mb-6 text-salon-dark">Chat with us on Messenger</h3>
               <Button
                 onClick={openMessenger}

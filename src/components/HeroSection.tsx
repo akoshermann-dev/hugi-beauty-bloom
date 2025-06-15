@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="pt-28 pb-20 bg-gradient-to-br from-salon-powderPink via-salon-rose to-white relative min-h-[70vh] flex items-center">
+    <section className="pt-28 pb-20 bg-gradient-to-br from-salon-powderPink via-salon-rose to-white relative min-h-[70vh] flex items-center animate-fade-in">
       <div className="absolute inset-0 pointer-events-none flex">
         <div className="w-1/2 bg-salon-powderPink/20" />
         <div className="w-1/2 bg-salon-powderGrey/20" />
@@ -12,25 +12,32 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="md:w-1/2 text-center md:text-left animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-playfair font-bold text-salon-dark leading-tight mb-5">
+            <h1 className="text-4xl md:text-5xl font-playfair font-bold text-salon-dark leading-tight mb-6 drop-shadow-sm">
               Effortless style. <br />
               Warm{' '}
               <span
+                className="relative px-3 py-1 rounded-2xl"
                 style={{
                   color: '#e275ad',
+                  background: 'rgba(246,214,225,0.70)',
+                  boxShadow: '0 0 0 6px rgba(246,214,225,0.15)',
+                  textShadow: '0 2px 6px #e275ad22',
                 }}
               >
                 welcome.
               </span>
             </h1>
-            <p className="text-lg text-salon-brown mb-8 font-medium">
+            <p className="text-lg text-salon-brown mb-8 font-medium max-w-md mx-auto md:mx-0">
               A cozy, modern beauty salon in Budapest for vibrant hair moments &amp; personal care, where you always feel at home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button className="bg-salon-powderPink hover:bg-salon-blush text-salon-dark px-8 py-4 text-lg font-semibold rounded-full shadow transition-colors duration-150 border border-salon-powderGrey">
+              <Button className="bg-salon-powderPink hover:bg-salon-blush text-salon-dark px-8 py-4 text-lg font-semibold rounded-full shadow-lg border border-salon-powderGrey animate-pop-in">
                 Book Appointment
               </Button>
-              <Button variant="outline" className="border-salon-powderPink text-salon-powderPink hover:bg-salon-powderPink/30 px-8 py-4 text-lg font-semibold rounded-full transition">
+              <Button
+                variant="outline"
+                className="border-salon-powderPink text-salon-powderPink hover:bg-salon-powderPink/30 px-8 py-4 text-lg font-semibold rounded-full shadow transition"
+              >
                 View Services
               </Button>
             </div>
@@ -52,4 +59,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

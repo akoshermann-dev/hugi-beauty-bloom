@@ -35,7 +35,7 @@ const TestimonialsSection = () => {
   );
 
   return (
-    <section id="testimonials" className="py-20 bg-salon-rose/70">
+    <section id="testimonials" className="py-20 bg-salon-rose/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Testimonials</h2>
@@ -44,8 +44,8 @@ const TestimonialsSection = () => {
         </div>
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
           {testimonials.map((testimonial, i) => (
-            <Card key={i} className="bg-white border-none shadow-lg rounded-xl hover:shadow-2xl transition duration-200">
-              <CardContent className="p-6">
+            <Card key={i} className="bg-white border border-salon-powderGrey/20 shadow-lg rounded-2xl hover:shadow-2xl transition duration-200 animate-fade-in-up">
+              <CardContent className="p-8">
                 <div className="flex mb-3">{renderStars(testimonial.rating)}</div>
                 <blockquote className="mb-3">
                   <p className="text-salon-brown italic font-medium">"{testimonial.quote}"</p>
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <a
             href="#"
-            className="inline-block text-salon-powderPink font-bold hover:underline text-lg transition"
+            className="inline-block text-salon-powderPink font-bold hover:underline text-lg transition font-playfair"
           >
             Read More Reviews
           </a>

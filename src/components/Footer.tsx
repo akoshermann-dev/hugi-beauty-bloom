@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-salon-powderGrey text-salon-dark py-10 mt-10">
+    <footer className="bg-salon-powderGrey/70 text-salon-dark py-10 mt-10 border-t border-salon-powderGrey/30">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex-1 text-center md:text-left">
@@ -15,11 +15,11 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-8 items-center justify-center">
-            <a href="/" className="text-salon-dark hover:text-salon-powderPink transition-colors">Home</a>
-            <a href="#about" className="text-salon-dark hover:text-salon-powderPink transition-colors">About</a>
-            <a href="#services" className="text-salon-dark hover:text-salon-powderPink transition-colors">Services</a>
-            <a href="#gallery" className="text-salon-dark hover:text-salon-powderPink transition-colors">Gallery</a>
-            <a href="#contact" className="text-salon-dark hover:text-salon-powderPink transition-colors">Contact</a>
+            <a href="/" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Home</a>
+            <a href="#about" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">About</a>
+            <a href="#services" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Services</a>
+            <a href="#gallery" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Gallery</a>
+            <a href="#contact" className="text-salon-dark hover:text-salon-powderPink transition-colors font-playfair">Contact</a>
           </div>
           <div className="flex-1 text-center md:text-right">
             <span className="block text-salon-brown">Follow us:</span>

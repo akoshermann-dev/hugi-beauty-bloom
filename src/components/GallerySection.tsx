@@ -11,7 +11,7 @@ const galleryImages = [
 ];
 
 const GallerySection = () => (
-  <section id="gallery" className="py-20 bg-salon-rose">
+  <section id="gallery" className="py-20 bg-salon-rose/80">
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-playfair font-bold text-salon-dark mb-2">Gallery</h2>
@@ -20,7 +20,7 @@ const GallerySection = () => (
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
         {galleryImages.map((img, i) => (
-          <div key={i} className="relative overflow-hidden rounded-xl bg-white border border-salon-powderGrey/20 shadow hover:shadow-lg transition animate-fade-in-up">
+          <div key={i} className="relative overflow-hidden rounded-2xl bg-white border border-salon-powderGrey/20 shadow-lg hover:shadow-2xl transition animate-fade-in-up">
             <div className="aspect-square w-full bg-salon-powderGrey/10">
               <img src={img.url} alt={img.alt} className="w-full h-full object-cover" />
             </div>
@@ -33,7 +33,7 @@ const GallerySection = () => (
       <div className="text-center mt-10">
         <a
           href="#"
-          className="inline-block text-salon-powderPink font-bold hover:underline text-lg mt-6 transition"
+          className="inline-block text-salon-powderPink font-bold hover:underline text-lg mt-6 hover-scale transition font-playfair"
         >
           View More on Instagram
         </a>

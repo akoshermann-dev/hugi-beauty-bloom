@@ -48,7 +48,7 @@ const ServicesSection = () => {
                 <TabsTrigger
                   key={tab}
                   value={tab}
-                  className="data-[state=active]:bg-salon-powderPink data-[state=active]:text-salon-dark font-semibold rounded-full transition px-5 py-2"
+                  className="data-[state=active]:bg-salon-powderPink data-[state=active]:text-salon-dark font-semibold rounded-full transition px-5 py-2 font-playfair"
                 >
                   {icons[tab]} <span className="ml-2 capitalize">{tab}</span>
                 </TabsTrigger>
@@ -61,7 +61,7 @@ const ServicesSection = () => {
                 {services[category].map((service, idx) => (
                   <div
                     key={idx}
-                    className="bg-white p-5 rounded-xl shadow hover:shadow-lg border border-salon-powderGrey/20 flex flex-col justify-between transition animate-fade-in-up"
+                    className="bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl border border-salon-powderGrey/20 flex flex-col justify-between transition animate-fade-in-up"
                   >
                     <div>
                       <div className="flex justify-between items-center mb-2">
@@ -81,7 +81,7 @@ const ServicesSection = () => {
         </Tabs>
         <div className="text-center mt-12">
           <p className="text-salon-brown font-medium mb-4">Have questions? We're here for you.</p>
-          <Button className="bg-salon-powderPink hover:bg-salon-blush text-salon-dark px-8 py-3 font-semibold rounded-full shadow transition">
+          <Button className="bg-salon-powderPink hover:bg-salon-blush text-salon-dark px-8 py-3 font-semibold rounded-full shadow-md transition drop-shadow">
             Contact Us
           </Button>
         </div>
